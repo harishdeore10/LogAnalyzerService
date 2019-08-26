@@ -1,0 +1,46 @@
+apply plugin: 'java'
+
+group 'com.credit.suisse.log.analyzer'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.credit.suisse.log.analyzer.application.Application'
+    }
+    baseName = project.name + '-all'
+    from {
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile "ch.qos.logback:logback-classic:1.1.7"
+    compile "org.hibernate:hibernate-core:4.3.6.Final"
+    compile "org.hibernate:hibernate-entitymanager:4.3.6.Final"
+    compile "commons-collections:commons-collections:3.1"
+    compile "javax.transaction:jta:1.1"
+    compile "org.slf4j:slf4j-log4j12:1.7.25"
+    compile "javassist:javassist:3.12.1.GA"
+    compile "commons-io:commons-io:2.6"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.0.1"
+    compile "org.hsqldb:hsqldb:2.5.0"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // https://projectlombok.org
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+}
