@@ -45,6 +45,9 @@ To compile and run everything, the command is:
 
 To execute program, use below command
 
+java -jar LogAnalyzer-all-1.0-SNAPSHOT.jar <file path>
+
+Ex-
 java -jar LogAnalyzer-all-1.0-SNAPSHOT.jar src/main/resources/logfile.txt
 
 Version:
