@@ -48,7 +48,10 @@ To compile and run everything, the command is:
 
 To execute program, use below command
 
-java -jar LogAnalyzer-all-1.0-SNAPSHOT.jar C:\Users\DEORE\Desktop\logfile.txt
+java -jar LogAnalyzer-all-1.0-SNAPSHOT.jar {filepath}
+
+Ex-
+java -jar LogAnalyzer-all-1.0-SNAPSHOT.jar src/main/resources/logfile.txt
 
 Version:
 1.0-SNAPSHOT
