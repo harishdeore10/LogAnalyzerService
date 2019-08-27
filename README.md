@@ -42,9 +42,11 @@ To compile and run these programs, you only need JDK 8 & Gradle installed.
 
 To compile and run everything, the command is:
 
-"gradle clean"
-"gradle build"
-"gradle fatjar"
+a) "gradle clean"
+b) "gradle build"
+c) "gradle fatjar"
+
+Last command will generate a fat jar which we will be executing.
 
 To execute program, use below command
 
