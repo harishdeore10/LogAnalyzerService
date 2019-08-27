@@ -34,6 +34,9 @@ Set Up:
 Add all database related configuration in "hibernate.cfg.xml" file. If you are using HSQLDB then run server
 locally on port 9001 and Database "demodb".
 
+For ex command:
+ 
+ java -classpath lib/hsqldb.jar org.hsqldb.server.Server -database.0 file:demodb -dbname.0 demodb
 
 To compile and run these programs, you only need JDK 8 & Gradle installed.
 
@@ -45,7 +48,7 @@ To compile and run everything, the command is:
 
 To execute program, use below command
 
-java -jar LogAnalyzer-all-1.0-SNAPSHOT.jar src/main/resources/logfile.txt
+java -jar LogAnalyzer-all-1.0-SNAPSHOT.jar C:\Users\DEORE\Desktop\logfile.txt
 
 Version:
 1.0-SNAPSHOT
